@@ -399,6 +399,20 @@ footer span {
 
 /* Button-- merge into the top later } */
 
+.send-button {
+  display: block;
+  font-size: 1rem;
+  text-align: center;
+  white-space: nowrap;
+  width: auto;
+  margin: 0 auto;
+  padding: 3rem 6rem;
+}
+
+.send-button:hover {
+  color: red;
+}
+
 .bttn-default {
   background-color: #fff;
   color: #3e8e41;
