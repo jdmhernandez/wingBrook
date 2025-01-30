@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+Allow: /public/
+
+Sitemap: https://simplybroccoli.netlify.app/sitemap.txt
