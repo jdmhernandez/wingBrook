@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /private/
+Disallow:
 
 Sitemap: https://simplybroccoli.netlify.app/sitemap.txt
