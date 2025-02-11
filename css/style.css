@@ -392,6 +392,13 @@ footer span {
   width: 2rem;
   height: 2rem;
 }
+/* other-blogs */
+
+.other-blogs {
+  width: 1050px;
+  margin: 0 auto;
+}
+
 /* Span */
 .secret {
   color: #202020;
