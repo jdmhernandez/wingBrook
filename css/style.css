@@ -1,6 +1,6 @@
-/* .green {
+.green {
   color: #ff5733; 
-} */
+}
 
 /* font face */
 @font-face {
@@ -223,11 +223,11 @@ nav .contain {
 }
 
 /* Tagline section */
-#tagline h1 {
+.tagline h1 {
   text-align: center;
 }
 
-#tagline .text-group {
+.tagline .text-group {
   padding: 2rem 0 0 0;
   margin: 0 auto;
   width: 55rem;
@@ -662,7 +662,7 @@ footer span {
     background-size: cover;
     background-position: center 28%;
   }
-  #tagline .text-group {
+  .tagline .text-group {
     width: 116rem;
     text-align: left;
     /* column-width: 40rem;
