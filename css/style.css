@@ -441,7 +441,7 @@ footer {
   background-size: cover;
   background-position: center;
   color: #ffffff;
-  padding-top: 80px;
+  padding-top: 40px;
   margin: 0 auto;
 }
 
@@ -497,7 +497,7 @@ footer span {
 
 /* Contact email direct */
 .contactemail {
-  padding: 1rem 0 5rem 0;
+  padding: 1rem 0 1rem 0;
 }
 
 /* About section (in footer) */
