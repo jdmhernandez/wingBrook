@@ -234,6 +234,10 @@ nav .contain {
   text-align: center;
 }
 
+.tag2 {
+  border-bottom:  1px solid gray;
+}
+
 /* Gallery section */
 #gallery {
   padding-top: 80px;
@@ -298,17 +302,12 @@ nav .contain {
 }
 
 .newspaper-style {
-  font-family: "Georgia", serif; 
-  text-align: justify;
-  line-height: 1.6;
+  font-family: "Georgia", serif;
 }
 
 .dropcap {
   font-size: 3rem;
   font-weight: bold;
-  float: left;
-  line-height: 1;
-  margin-right: 8px;
   color: #a52a2a; 
 }
 
