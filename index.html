@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -50,164 +51,280 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!-- Navigation -->
-    <nav class="navcss navbar-default">
-        <div class="contain">
-            <a class="nav-h1" href="#home">Simply Broccoli<span>Wing's broccolini recipes</span></a>
-        </div>
-        <ul class="nav navbar-nav znav">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#gallery">BROCCOLINI GALLERY</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-            <li><a href="#about">ABOUT</a></li>
-        </ul>
-    </nav>
+    <header>
+        <div class="edit-container">
+            <nav class="navcss navbar-default">
+                <div class="contain">
+                    <a class="nav-h1" href="#home">Simply Broccoli<span>Wing's broccolini recipes</span></a>
+                </div>
+                <ul class="nav navbar-nav znav">
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#recipes">BROCCOLINI GALLERY</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                </ul>
+            </nav>
+            <!-- Banner -->
+            <section id="home">
+                <div class="container">
+                    <h1 class="pb-1">Wing B. Recipes</h1>
+                    <h2 class="p-5">FEATURING THE BEST BROCCOLINI DISHES</h2>
+                    <a href="#" class="bttn" onclick="showPopup(event)">BROWSE RECIPES</a>
+                </div>
+            </section>
+    </header>
+        <main>
+            <!-- Simply Broccoli -->
+            <section id="tagline">
+                <div>
+                    <h2 class="pt-5 text-center">Simply Broccoli: Your Guide to Broccolini Excellence
+                    </h2>
+                </div>
+                <div class="text-group pb-5">
+                    <p class="text-dark">Think you know broccoli? Think again. I'm here to make broccolini the star of your plate because it deserves the spotlight. If you haven't tried it yet, you're seriously missing out.
+                    Broccolini takes much less prep (no cutting stems!) and perhaps tastier due to its natural sweetness than broccoli.
+                    </p>
+                    <p class="text-dark">Whether you're looking to elevate your meals, impress your friends, or trick the kids into loving their greens? The Chinese broccoli, also known as gai-lan, kai lan or Chinese kale (芥蓝) is your <span class="secret"><i class="fa-solid fa-book-skull"></i> secret weapon</span>. If you're grilling it, steaming it, or even just tossing it into a salad, I've got all the recipes and tips you need to make broccolini your new go-to vegetable.</p>
+                    <p class="text-dark">What sets broccolini apart isn't just its elegant appearance – it's the perfect marriage of texture and taste. Through years of professional kitchen experience, I've found that its tender stems and delicate florets take on flavors better than traditional broccoli, while requiring minimal preparation. This isn't just my opinion – it's backed by nutritional studies showing broccolini's higher concentrations of glucosinolates compared to regular broccoli.</p>
+                </div>
+                </div>
+            </section>
+            <!-- Gallery Section -->
+            <!-- <section id="gallery" class="container text-center">
+                <h1 class="heading">Broccolini Recipes</h1>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="img/wok-dish-broccoli.webp" alt="Wing Broccolini Recipe 1 garlic sautee using simply broccoli">
+                        <h3>Garlic Sautéed Broccolini</h3>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="img/broccolini-simple.webp" alt="Wing Broccolini Recipe 2 with lemon using simply broccoli">
+                        <h3>Grilled Broccolini with Lemon</h3>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://placehold.co/300x200" alt="Wing Broccolini Recipe 3 stir fry using simply broccoli.">
+                        <h3>Broccolini Stir-fry</h3>
+                    </div>
+                </div> -->
 
-    <!-- Home Section -->
-    <section id="home">
-        <div class="container">
-            <h1 class="pb-1">Wing B. Recipes</h1>
-            <h2 class="p-5">FEATURING THE BEST BROCCOLINI DISHES</h2>
-            <a href="#gallery" class="bttn">BROWSE RECIPES</a>
-        </div>
-    </section>
-
-    <!-- Simply Broccoli -->
-
-    <section id="tagline">
-        <div>
-            <h1 class="p-5">Welcome to Simply Broccoli!</h1>
-        </div>
-        <div class="text-group">
-            <p>Think you know broccoli? Think again. I'm here to make broccolini the star of your plate because it deserves the spotlight. If you haven't tried it yet, you're seriously missing out.
-            Broccolini takes much less prep (no cutting stems!) and perhaps tastier due to its natural sweetness than broccoli.
-            </p>
-
-            <p>Whether you're looking to elevate your meals, impress your friends, or trick the kids into loving their greens? The Chinese broccoli, also known as gai-lan, kai lan or Chinese kale (芥蓝) is your <span class="secret"><i class="fa-solid fa-book-skull"></i> secret weapon</span>. If you're grilling it, steaming it, or even just tossing it into a salad, I've got all the recipes and tips you need to make broccolini your new go-to vegetable.</p>
-
-            <p>Stop settling for the usual. Time to eat like you mean it.
-            </p>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="container text-center">
-        <h1 class="heading">Broccolini Recipes</h1>
-        <div class="row">
-            <div class="col-md-4">
-                <img src="img/wok-dish-broccoli.webp" alt="Wing Broccolini Recipe 1 garlic sautee using simply broccoli">
-                <h3>Garlic Sautéed Broccolini</h3>
+            <section id="recipes">
+            
+            <h2 class="text-center py-5">After trying dozens of ways to cook broccolini, I found these recipes to be the best!</h2>
+            <div class="recipe-menu">
+                     <button class="dropdown-button" onclick="showPopup()">Click here to view Recipes</button>
             </div>
-            <div class="col-md-4">
-                <img src="img/broccolini-simple.webp" alt="Wing Broccolini Recipe 2 with lemon using simply broccoli">
-                <h3>Grilled Broccolini with Lemon</h3>
+            <!-- Popup Container -->
+            <div id="recipePopup" class="popup-overlay">
+                <div class="popup-content">
+                    <div class="popup-header">
+                        <h3>Broccolini Recipes</h3>
+                        <button class="close-button" onclick="hidePopup()">✖</button>
+                    </div>
+            
+                    <!-- Recipe 1 -->
+                    <div class="recipe-card">
+                        <h5>Garlic Sautéed Broccolini</h5>
+                        <img src="img/wok-dish-broccoli.webp" alt="Garlic Sautéed Broccolini">
+                        <button class="recipe-button" onclick="toggleRecipe('recipe1')">View Recipe</button>
+                        <div id="recipe1" class="recipe-content">
+                            <strong>Ingredients:</strong>
+                            <ul>
+                                <li>1 bunch broccolini</li>
+                                <li>2 tbsp olive oil</li>
+                                <li>3 cloves garlic, minced</li>
+                                <li>Salt and pepper, to taste</li>
+                                <li>Red pepper flakes (optional)</li>
+                            </ul>
+                            <strong>Instructions:</strong>
+                            <ol>
+                                <li>Heat olive oil in a skillet over medium heat.</li>
+                                <li>Add garlic and sauté until fragrant.</li>
+                                <li>Add broccolini and toss in garlic oil.</li>
+                                <li>Cook until tender yet bright green.</li>
+                                <li>Season and serve warm.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- Recipe 2 -->
+                    <div class="recipe-card">
+                        <h5>Grilled Broccolini with Lemon</h5>
+                        <img src="img/broccolini-simple.webp" alt="Grilled Broccolini with Lemon">
+                        <button class="recipe-button" onclick="toggleRecipe('recipe2')">View Recipe</button>
+                        <div id="recipe2" class="recipe-content">
+                            <strong>Ingredients:</strong>
+                            <ul>
+                                <li>1 bunch broccolini</li>
+                                <li>1 tbsp olive oil</li>
+                                <li>Salt and pepper, to taste</li>
+                                <li>1 lemon, sliced</li>
+                                <li>1 tbsp fresh lemon juice</li>
+                            </ul>
+                            <strong>Instructions:</strong>
+                            <ol>
+                                <li>Preheat grill to medium-high heat.</li>
+                                <li>Toss broccolini with olive oil, salt, and pepper.</li>
+                                <li>Grill until lightly charred.</li>
+                                <li>Drizzle with lemon juice and garnish with slices.</li>
+                                <li>Serve warm.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- Recipe 3 -->
+                    <div class="recipe-card">
+                        <h5>Broccolini Stir-fry</h5>
+                        <img src="https://placehold.co/300x200" alt="Broccolini Stir-fry">
+                        <button class="recipe-button" onclick="toggleRecipe('recipe3')">View Recipe</button>
+                        <div id="recipe3" class="recipe-content">
+                            <strong>Ingredients:</strong>
+                            <ul>
+                                <li>1 bunch broccolini, cut into bite-sized pieces</li>
+                                <li>2 tbsp soy sauce</li>
+                                <li>1 tbsp sesame oil</li>
+                                <li>1 garlic clove, minced</li>
+                                <li>1-inch ginger, grated</li>
+                                <li>1/2 red bell pepper, sliced</li>
+                                <li>1/4 cup mushrooms, sliced</li>
+                                <li>Sesame seeds for garnish</li>
+                            </ul>
+                            <strong>Instructions:</strong>
+                            <ol>
+                                <li>Heat oil in a pan over medium-high heat.</li>
+                                <li>Sauté garlic and ginger until fragrant.</li>
+                                <li>Add broccolini, bell pepper, and mushrooms.</li>
+                                <li>Stir-fry for 5-7 minutes.</li>
+                                <li>Mix in soy sauce and sesame oil.</li>
+                                <li>Garnish with sesame seeds and serve.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4">
-                <img src="https://placehold.co/300x200" alt="Wing Broccolini Recipe 3 stir fry using simply broccoli.">
-                <h3>Broccolini Stir-fry</h3>
+            <div class="text-center all-about pb-5">
+                <p class="text-monospace">These are recipes that are all about keeping things simple and straightforward while using healthy ingredients that burst with flavor. Each of these have been thoughtfully crafted to present broccolini in the best possible light—no fuss, just good food.</p>
+            </div>
+            </section>
+   
+            <!-- Contact Section -->
+ <!-- Contact Section -->
+<div class="row contact-button text-center" id="contact">
+    <div class="col-12 col-lg-6">
+        <div class="contact-info bg-white shadow-lg p-4">
+            <h4 class="mb-4">Visit Us: 11762 106 St, Edmonton, AB T5G 2R1</h4>
+            <p>If you want to talk about anything broccolini or just anything in general, please visit my <a href="contact.html" class="bttn">contact page</a>.</p>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2529.833512552896!2d-113.50686864824861!3d53.568387374113904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a02372a28a6757%3A0x5e3c2cb6a4d3edba!2sNorthern%20Alberta%20Institute%20of%20Technology!5e1!3m2!1sen!2sca!4v1739327870636!5m2!1sen!2sca" width="100%" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Other Blogs Section -->
+    <div class="col-12 col-lg-6">
+        <div class="container other-blogs card my-5 shadow-lg border-0">
+            <div class="card-body text-start">
+                <h5 class="card-title fs-2 text-primary font-weight-bold">Hottest Blogs You Might Be Interested In!</h5>
+                <hr>
+                <p class="mb-2">
+                    <span class="fw-bold">
+                        <a href="https://site1737057039.mywhc.ca/anaheim-peppers/" class="text-decoration-none text-success">
+                            Anaheim Peppers: A Flavorful Journey
+                            <svg width="512" height="512" version="1.1" viewBox="0 0 396.34 396.34" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m134.34 172.39c-10.31 9.53-24.09 15.34-39.23 15.34-4.64 0-9.15-0.56-13.47-1.59-2.2 11.31-7.69 21.44-15.45 29.35-5.73 5.85-12.69 10.49-20.47 13.5 0 0.05 0.01 0.11 0.01 0.17 0 14.05-5.01 26.93-13.35 36.95-24.52-23.25-27.81-61.23-8.34-88.29 2.73-3.8 5.91-7.39 9.55-10.69l0.76-0.69c7.81-7.08 16.87-12 26.43-14.75 20.33-5.88 42.95-1.99 60.71 11.68 4.14 3.19 8.43 6.2 12.85 9.02z" fill="#9AD14B"/>
+                                <path d="m388.84 100.05c-4.26 118.37-101.55 213.03-220.96 213.03-15.8 0-31.21-1.66-46.06-4.8-30.03-6.37-57.8-18.83-81.97-36.03-2.67-1.9-5.16-3.95-7.46-6.14 8.34-10.02 13.35-22.9 13.35-36.95 0-0.06-0.01-0.12-0.01-0.17 18.3-7.08 32.09-23.17 35.92-42.85 4.32 1.03 8.83 1.59 13.47 1.59 15.14 0 28.92-5.81 39.23-15.34 27.46 17.52 60.07 27.67 95.06 27.67 70.16 0 130.79-40.82 159.43-100.01z" fill="#F95428"/>
+                                <path d="m45.725 228.99c0 0.05 0.01 0.11 0.01 0.17 0 14.05-5.01 26.93-13.35 36.95-24.52-23.25-27.81-61.23-8.34-88.29 2.73-3.8 5.91-7.39 9.55-10.69l0.76-0.69c7.81-7.08 16.87-12 26.43-14.75l0.37 1.75s-24 32 5 62c0.02 0.02 0.03 0.03 0.04 0.05-5.73 5.85-12.69 10.49-20.47 13.5z" fill="#90BC42"/>
+                                <path d="m121.82 308.28c-30.03-6.37-57.8-18.83-81.97-36.03-2.67-1.9-5.16-3.95-7.46-6.14 8.34-10.02 13.35-22.9 13.35-36.95 0-0.06-0.01-0.12-0.01-0.17 18.3-7.08 32.09-23.17 35.92-42.85 4.32 1.03 8.83 1.59 13.47 1.59 0 0-37.06 87.59 26.7 120.55z" fill="#E54728"/>
+                                <path d="m229.4 230.56c-25.702 0-50.823-4.662-74.666-13.856-3.865-1.49-5.79-5.831-4.3-9.696 1.491-3.865 5.829-5.791 9.696-4.299 22.114 8.527 45.42 12.851 69.27 12.851 36.875 0 72.713-10.461 103.64-30.253 1.078-0.69 2.146-1.388 3.208-2.098 3.445-2.301 8.102-1.377 10.403 2.066 2.303 3.443 1.378 8.101-2.065 10.403-1.146 0.766-2.298 1.519-3.46 2.263-33.345 21.339-71.98 32.619-111.73 32.619z" fill="#fff"/>
+                                <circle cx="135.82" cy="199.95" r="7.5" fill="#fff"/>
+                            </svg>
+                        </a>
+                    </span>
+                </p>
+                <p class="text-muted">
+                    <strong>Alex Green</strong> is the Produce Manager at Fresh Harvest Market in Downtown Los Angeles, CA. 
+                    With a Bachelor's Degree in Agricultural Science and over 10 years of experience, he's got 
+                    <a href="https://site1737057039.mywhc.ca/anaheim-peppers/" class="fw-bold text-danger">
+                        one hell of a recipe to spice up your life with Anaheim Peppers—mild heat, maximum flavor!
+                    </a>.
+                </p>
+            </div>
+            <!-- shae -->
+            <div class="card-body text-start">
+                <hr>
+                    <p class="mb-2">
+                        <span class="fw-bold">
+                            <a href="https://kimcelerykimchi.netlify.app/" class="text-decoration-none text-success">
+                                Celery Kimchi Recipe: A Fresh Twist on Tradition
+                                <svg width="512" height="512" version="1.1" viewBox="0 0 396.34 396.34" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m134.34 172.39c-10.31 9.53-24.09 15.34-39.23 15.34-4.64 0-9.15-0.56-13.47-1.59-2.2 11.31-7.69 21.44-15.45 29.35-5.73 5.85-12.69 10.49-20.47 13.5 0 0.05 0.01 0.11 0.01 0.17 0 14.05-5.01 26.93-13.35 36.95-24.52-23.25-27.81-61.23-8.34-88.29 2.73-3.8 5.91-7.39 9.55-10.69l0.76-0.69c7.81-7.08 16.87-12 26.43-14.75 20.33-5.88 42.95-1.99 60.71 11.68 4.14 3.19 8.43 6.2 12.85 9.02z" fill="#9AD14B"/>
+                                    <path d="m388.84 100.05c-4.26 118.37-101.55 213.03-220.96 213.03-15.8 0-31.21-1.66-46.06-4.8-30.03-6.37-57.8-18.83-81.97-36.03-2.67-1.9-5.16-3.95-7.46-6.14 8.34-10.02 13.35-22.9 13.35-36.95 0-0.06-0.01-0.12-0.01-0.17 18.3-7.08 32.09-23.17 35.92-42.85 4.32 1.03 8.83 1.59 13.47 1.59 15.14 0 28.92-5.81 39.23-15.34 27.46 17.52 60.07 27.67 95.06 27.67 70.16 0 130.79-40.82 159.43-100.01z" fill="#F95428"/>
+                                    <path d="m45.725 228.99c0 0.05 0.01 0.11 0.01 0.17 0 14.05-5.01 26.93-13.35 36.95-24.52-23.25-27.81-61.23-8.34-88.29 2.73-3.8 5.91-7.39 9.55-10.69l0.76-0.69c7.81-7.08 16.87-12 26.43-14.75l0.37 1.75s-24 32 5 62c0.02 0.02 0.03 0.03 0.04 0.05-5.73 5.85-12.69 10.49-20.47 13.5z" fill="#90BC42"/>
+                                    <path d="m121.82 308.28c-30.03-6.37-57.8-18.83-81.97-36.03-2.67-1.9-5.16-3.95-7.46-6.14 8.34-10.02 13.35-22.9 13.35-36.95 0-0.06-0.01-0.12-0.01-0.17 18.3-7.08 32.09-23.17 35.92-42.85 4.32 1.03 8.83 1.59 13.47 1.59 0 0-37.06 87.59 26.7 120.55z" fill="#E54728"/>
+                                    <path d="m229.4 230.56c-25.702 0-50.823-4.662-74.666-13.856-3.865-1.49-5.79-5.831-4.3-9.696 1.491-3.865 5.829-5.791 9.696-4.299 22.114 8.527 45.42 12.851 69.27 12.851 36.875 0 72.713-10.461 103.64-30.253 1.078-0.69 2.146-1.388 3.208-2.098 3.445-2.301 8.102-1.377 10.403 2.066 2.303 3.443 1.378 8.101-2.065 10.403-1.146 0.766-2.298 1.519-3.46 2.263-33.345 21.339-71.98 32.619-111.73 32.619z" fill="#fff"/>
+                                    <circle cx="135.82" cy="199.95" r="7.5" fill="#fff"/>
+                                </svg>
+                            </a>
+                        </span>
+                </p>
+                <p class="text-dark">Discover the bold and refreshing flavors of celery kimchi by <strong>Kim Jiho Lee</strong> with their easy-to-follow recipes! Whether you’re a kimchi lover or trying it for the first time, their website offers step-by-step guides to creating crisp, spicy, and tangy celery kimchi at home. Packed with probiotics and a delicious crunch, this unique twist on a classic will elevate any meal. Visit their site today and start fermenting your way to bold, healthy flavors!</p>
+                <p class="text-dark">
+                    Check out this awesome Kimchi recipe at <a href="https://kimcelerykimchi.netlify.app/" class="text-danger">Kim Celery Kimchi</a>.
+                </p>
             </div>
         </div>
-        <div>
-            <p>-- insert Drop down icon/sub-menu for recipes here --</p>
-
-            <button class="recipeButton">
-                <i class="fa fa-caret-down" aria-hidden="true"></i>
-            </button>
-
-            <div id="recipeDropdown" class="dropdown-content">
-                <ul>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
+    </div>
+    
+</div>
+            <!-- Other blogs -->
+        </main>
+        <!-- Footer -->
+        <footer>
+            <div class="container text-center">
+                <p>&copy; 2025 Simply Broccoli. For educational purposes only. All broccoli designs are the intellectual property of their linked creators.</p>
+                <ul class="social-icon">
+                    <li><a href="#" class="fab fa-facebook-f"></a></li>
+                    <li><a href="#" class="fab fa-twitter"></a></li>
+                    <li><a href="#" class="fab fa-instagram"></a></li>
+                    <li><a href="#" class="fab fa-linkedin-in"></a></li>
                 </ul>
             </div>
-        </div>
-    </section>
-
-    <div class="text-center all-about">
-        <p>These are recipes that are all about keeping things simple and straightforward while using healthy ingredients that burst with flavor. Each of these have been thoughtfully crafted to present broccolini in the best possible light-no fuss, just good food.</p>
-    </div>
-
-    <!-- Contact Section -->
-     <div class="contact-button text-center" id="contact">
-        <p>If you wanna talk about anything broccoli or just anything in general, please visit my contact page.</p>
-        <a href="contact.html" class="display-1">Feedback</a>
-    </div>
-
-    <!-- Other blogs -->
-    <div class="other-blogs card my-5 shadow-lg border-0">
-        <div class="card-body">
-            <h3 class="card-title text-primary">Other Blogs You Might Be Interested In</h3>
-            <hr>
-            <p class="mb-2">
-                <span class="fw-bold">
-                    <a href="https://site1737057039.mywhc.ca/anaheim-peppers/" class="text-decoration-none text-success">
-                        Anaheim Peppers: A Flavorful Journey
-                    </a>
-                </span>
-            </p>
-            <p class="text-muted">
-                <strong>Alex Green</strong> is the Produce Manager at Fresh Harvest Market in Downtown Los Angeles, CA. 
-                With a Bachelor's Degree in Agricultural Science and over 10 years of experience, he's got 
-                <a href="https://site1737057039.mywhc.ca/anaheim-peppers/" class="fw-bold text-danger text-decoration-none">
-                    one hell of a recipe to spice up your life with Anaheim Peppers—mild heat, maximum flavor!
-                </a>.
-            </p>
-        </div>
-    </div>
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2025 Simply Broccoli. For educational purposes only. All broccoli designs are the intellectual property of their linked creators.</p>
-            <ul class="social-icon">
-                <li><a href="#" class="fab fa-facebook-f"></a></li>
-                <li><a href="#" class="fab fa-twitter"></a></li>
-                <li><a href="#" class="fab fa-instagram"></a></li>
-                <li><a href="#" class="fab fa-linkedin-in"></a></li>
-            </ul>
-        </div>
-            <p class="text-center contactemail">Contact @ <a href="mailto:wingbroccolini@gmail.com" class="btn btn-outline-success">wingbroccolini@gmail.com</a></p>
-        <div id="about">
-            <h2>About me</h2>
-            <p>
-                Wing Brook
-                <!-- svg -->
-                <svg width="800px" height="800px" version="1.1" viewBox="0 0 512 512" xml:space="preserve"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="m358.86 261.91c-3.605 9.007-7.793 20.107-12.178 32.966-16.997 49.815-36.943 126.09-36.943 209.82h-107.5c0-83.723-19.946-160-36.931-209.82-4.386-12.872-8.573-23.972-12.178-32.979 10.989-1.437 21.011-5.909 29.213-12.55 11.088 14.42 26.314 25.484 43.893 31.443 1.747 11.509 3.481 24.046 5.092 37.488 0.458 3.704 0.892 7.483 1.313 11.323 1.338 11.906 11.36 20.937 23.34 20.937h0.013c11.98 0 22.015-9.031 23.34-20.937 0.421-3.841 0.855-7.619 1.301-11.323 1.611-13.442 3.345-25.979 5.117-37.488 17.567-5.959 32.793-17.022 43.881-31.443 8.213 6.642 18.236 11.126 29.224 12.563z"
-                        fill="#71A517" />
-                    <g fill="#648E13">
+                <p class="text-center contactemail">Contact @ <a href="mailto:wingbroccolini@gmail.com" class="btn btn-outline-success">wingbroccolini@gmail.com</a></p>
+            <div id="about">
+                <h2>About me</h2>
+                <p>
+                    Wing Brook
+                    <!-- svg -->
+                    <svg width="800px" height="800px" version="1.1" viewBox="0 0 512 512" xml:space="preserve"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path
-                            d="m196.88 300.31c8.621 7.128 18.546 12.737 29.367 16.405 1.672 0.57 3.37 1.09 5.092 1.561-1.611-13.442-3.345-25.979-5.092-37.488-12.966-4.396-24.644-11.573-34.333-20.82-1.698-1.62-3.335-3.304-4.908-5.047-0.028-0.031-0.057-0.061-0.085-0.093-0.71-0.788-1.401-1.592-2.084-2.405-0.089-0.107-0.182-0.208-0.271-0.315-0.754-0.907-1.493-1.827-2.213-2.763-8.201 6.64-18.224 11.113-29.213 12.55 3.605 9.007 7.792 20.107 12.178 32.979 16.985 49.815 36.931 126.09 36.931 209.82h29.733c1e-3 -80.739-18.547-154.54-35.102-204.38z" />
+                            d="m358.86 261.91c-3.605 9.007-7.793 20.107-12.178 32.966-16.997 49.815-36.943 126.09-36.943 209.82h-107.5c0-83.723-19.946-160-36.931-209.82-4.386-12.872-8.573-23.972-12.178-32.979 10.989-1.437 21.011-5.909 29.213-12.55 11.088 14.42 26.314 25.484 43.893 31.443 1.747 11.509 3.481 24.046 5.092 37.488 0.458 3.704 0.892 7.483 1.313 11.323 1.338 11.906 11.36 20.937 23.34 20.937h0.013c11.98 0 22.015-9.031 23.34-20.937 0.421-3.841 0.855-7.619 1.301-11.323 1.611-13.442 3.345-25.979 5.117-37.488 17.567-5.959 32.793-17.022 43.881-31.443 8.213 6.642 18.236 11.126 29.224 12.563z"
+                            fill="#71A517" />
+                        <g fill="#648E13">
+                            <path
+                                d="m196.88 300.31c8.621 7.128 18.546 12.737 29.367 16.405 1.672 0.57 3.37 1.09 5.092 1.561-1.611-13.442-3.345-25.979-5.092-37.488-12.966-4.396-24.644-11.573-34.333-20.82-1.698-1.62-3.335-3.304-4.908-5.047-0.028-0.031-0.057-0.061-0.085-0.093-0.71-0.788-1.401-1.592-2.084-2.405-0.089-0.107-0.182-0.208-0.271-0.315-0.754-0.907-1.493-1.827-2.213-2.763-8.201 6.64-18.224 11.113-29.213 12.55 3.605 9.007 7.792 20.107 12.178 32.979 16.985 49.815 36.931 126.09 36.931 209.82h29.733c1e-3 -80.739-18.547-154.54-35.102-204.38z" />
+                            <path
+                                d="m358.86 261.91c-3.605 9.007-7.793 20.107-12.178 32.966-6.244-2.242-11.992-5.513-17.047-9.601-11.088 14.42-26.314 25.484-43.881 31.443-1.685 0.57-3.395 1.09-5.117 1.561 1.611-13.442 3.345-25.979 5.117-37.488 17.567-5.959 32.793-17.022 43.881-31.443 8.214 6.641 18.237 11.125 29.225 12.562z" />
+                        </g>
                         <path
-                            d="m358.86 261.91c-3.605 9.007-7.793 20.107-12.178 32.966-6.244-2.242-11.992-5.513-17.047-9.601-11.088 14.42-26.314 25.484-43.881 31.443-1.685 0.57-3.395 1.09-5.117 1.561 1.611-13.442 3.345-25.979 5.117-37.488 17.567-5.959 32.793-17.022 43.881-31.443 8.214 6.641 18.237 11.125 29.225 12.562z" />
-                    </g>
-                    <path
-                        d="m358.86 268.1c-10.989-1.437-21.011-5.922-29.225-12.562-11.088 14.42-26.314 25.484-43.881 31.443-9.341 3.159-19.351 4.869-29.758 4.869s-20.417-1.71-29.758-4.869c-17.58-5.959-32.805-17.022-43.893-31.443-8.201 6.64-18.224 11.113-29.213 12.55-2.515 0.335-5.092 0.508-7.693 0.508-0.31 0-0.607-0.025-0.917-0.025-4.894 27.503-28.903 48.39-57.806 48.39-32.434 0-58.735-26.289-58.735-58.735 0-10.345 2.688-20.07 7.396-28.519-21.232-13.206-35.38-36.745-35.38-63.603 0-41.341 33.511-74.853 74.852-74.853 3.531 0 7.012 0.273 10.419 0.743 5.835-35.531 36.671-62.65 73.849-62.65 15.337 0 29.597 4.633 41.477 12.55 9.676-20.441 30.476-34.589 54.597-34.589 24.443 0 45.479 14.544 54.981 35.432 12.116-8.424 26.822-13.392 42.704-13.392 37.178 0 68.014 27.119 73.837 62.65 3.407-0.471 6.888-0.743 10.431-0.743 41.341 0 74.853 33.511 74.853 74.853 0 26.859-14.148 50.397-35.395 63.604 4.708 8.449 7.396 18.174 7.396 28.519 0 32.446-26.289 58.735-58.722 58.735-28.915 0-52.924-20.887-57.806-48.39-0.31 0-0.619 0.025-0.929 0.025-2.601-3e-3 -5.166-0.176-7.681-0.498z"
-                        fill="#9AD14B" />
-                    <path
-                        d="m117.18 258.23c0-10.345 2.688-20.07 7.396-28.519-21.234-13.206-35.382-36.745-35.382-63.604 0-41.341 33.511-74.853 74.852-74.853 3.531 0 7.012 0.273 10.419 0.743 67.902-101.4 121.3-60.567 125.32-64.98-11.038-12.105-26.926-19.709-44.597-19.709-24.121 0-44.921 14.148-54.597 34.589-11.881-7.916-26.14-12.55-41.477-12.55-37.178 0-68.014 27.119-73.849 62.65-3.407-0.471-6.888-0.743-10.419-0.743-41.342 1e-3 -74.853 33.513-74.853 74.854 0 26.859 14.148 50.397 35.382 63.604-4.708 8.449-7.396 18.174-7.396 28.519 0 32.446 26.301 58.735 58.735 58.735 17.85 0 33.826-7.973 44.593-20.544-8.801-10.27-14.129-23.604-14.129-38.192z"
-                        fill="#90BC42" />
-                </svg>
-            </p>
-            <p>Hello everyone, my name is Wing Brook and I am passionate about learning different ways of preparing and enjoying broccolini. I've experimented with all kinds of broccolis in so many ways, and honestly, it's one of the most versatile veggies you'll find. From grilling, steaming, to salting and even including it in a salad, it has become a household vegetable in my kitchen.</p>
-
-            <p>This is because what makes me most excited about broccolini is how easy it is to work with in almost every meal. It is healthy, tasty and can really enhance the flavor of any meal. On this site, I am going to be sharing some basic recipes that will help you include broccolini in your daily meals and eat healthy no matter what your cooking skills are. You can even pretend to be a giant eating trees!</p>
-            
-            <p>My website is called Simply Broccoli because I specialize in broccolini. It is just broccoli, sleeker-but with a hybrid twist from China: proof that even the humblest things have their unique story behind them.</p>
-
-            <p>I've spent a lot of time figuring out how to make healthy food actually taste good, so you can trust that every recipe is something I'd genuinely enjoy myself. If you are in search of a quick and easy dinner idea or want to come up with something special, these recipes will change the way you think about broccolini, turning it into something you'll actually crave..</p>
-            
-            <p>Are you in the mood for some exciting meals? You've come to the right place! I'm excited to introduce you to these recipes and I'm sure you'll learn to love broccolini as much as I do. Let's get cooking!</p>
-            
-        </div>
-        <div class="policies text-center my-5">
-            <a href="https://www.iubenda.com/privacy-policy/18965021" class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
-            <a href="https://www.iubenda.com/privacy-policy/18965021/cookie-policy" class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe " title="Cookie Policy ">Cookie Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
-        </div>
-
-    </footer>
-    <script src="js/bootstrap.min.js"></script>
+                            d="m358.86 268.1c-10.989-1.437-21.011-5.922-29.225-12.562-11.088 14.42-26.314 25.484-43.881 31.443-9.341 3.159-19.351 4.869-29.758 4.869s-20.417-1.71-29.758-4.869c-17.58-5.959-32.805-17.022-43.893-31.443-8.201 6.64-18.224 11.113-29.213 12.55-2.515 0.335-5.092 0.508-7.693 0.508-0.31 0-0.607-0.025-0.917-0.025-4.894 27.503-28.903 48.39-57.806 48.39-32.434 0-58.735-26.289-58.735-58.735 0-10.345 2.688-20.07 7.396-28.519-21.232-13.206-35.38-36.745-35.38-63.603 0-41.341 33.511-74.853 74.852-74.853 3.531 0 7.012 0.273 10.419 0.743 5.835-35.531 36.671-62.65 73.849-62.65 15.337 0 29.597 4.633 41.477 12.55 9.676-20.441 30.476-34.589 54.597-34.589 24.443 0 45.479 14.544 54.981 35.432 12.116-8.424 26.822-13.392 42.704-13.392 37.178 0 68.014 27.119 73.837 62.65 3.407-0.471 6.888-0.743 10.431-0.743 41.341 0 74.853 33.511 74.853 74.853 0 26.859-14.148 50.397-35.395 63.604 4.708 8.449 7.396 18.174 7.396 28.519 0 32.446-26.289 58.735-58.722 58.735-28.915 0-52.924-20.887-57.806-48.39-0.31 0-0.619 0.025-0.929 0.025-2.601-3e-3 -5.166-0.176-7.681-0.498z"
+                            fill="#9AD14B" />
+                        <path
+                            d="m117.18 258.23c0-10.345 2.688-20.07 7.396-28.519-21.234-13.206-35.382-36.745-35.382-63.604 0-41.341 33.511-74.853 74.852-74.853 3.531 0 7.012 0.273 10.419 0.743 67.902-101.4 121.3-60.567 125.32-64.98-11.038-12.105-26.926-19.709-44.597-19.709-24.121 0-44.921 14.148-54.597 34.589-11.881-7.916-26.14-12.55-41.477-12.55-37.178 0-68.014 27.119-73.849 62.65-3.407-0.471-6.888-0.743-10.419-0.743-41.342 1e-3 -74.853 33.513-74.853 74.854 0 26.859 14.148 50.397 35.382 63.604-4.708 8.449-7.396 18.174-7.396 28.519 0 32.446 26.301 58.735 58.735 58.735 17.85 0 33.826-7.973 44.593-20.544-8.801-10.27-14.129-23.604-14.129-38.192z"
+                            fill="#90BC42" />
+                    </svg>
+                </p>
+                <p>Hello everyone, my name is Wing Brook and I am passionate about learning different ways of preparing and enjoying broccolini. I've experimented with all kinds of broccolis in so many ways, and honestly, it's one of the most versatile veggies you'll find. From grilling, steaming, to salting and even including it in a salad, it has become a household vegetable in my kitchen.</p>
+                <p>This is because what makes me most excited about broccolini is how easy it is to work with in almost every meal. It is healthy, tasty and can really enhance the flavor of any meal. On this site, I am going to be sharing some basic recipes that will help you include broccolini in your daily meals and eat healthy no matter what your cooking skills are. You can even pretend to be a giant eating trees!</p>
+        
+                <p>My website is called Simply Broccoli because I specialize in broccolini. It is just broccoli, sleeker-but with a hybrid twist from China: proof that even the humblest things have their unique story behind them.</p>
+                <p>I've spent a lot of time figuring out how to make healthy food actually taste good, so you can trust that every recipe is something I'd genuinely enjoy myself. If you are in search of a quick and easy dinner idea or want to come up with something special, these recipes will change the way you think about broccolini, turning it into something you'll actually crave..</p>
+        
+                <p>Are you in the mood for some exciting meals? You've come to the right place! I'm excited to introduce you to these recipes and I'm sure you'll learn to love broccolini as much as I do. Let's get cooking!</p>
+        
+            </div>
+            <div class="policies text-center my-5">
+                <a href="https://www.iubenda.com/privacy-policy/18965021" class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+                <a href="https://www.iubenda.com/privacy-policy/18965021/cookie-policy" class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe " title="Cookie Policy ">Cookie Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+            </div>
+        </footer>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+     <script src="js/main.js"></script>i
 </body>
 </html>
