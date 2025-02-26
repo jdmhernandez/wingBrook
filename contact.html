@@ -23,7 +23,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav class="contact-page-nav">
         <div class="contain">
             <a class="nav-h1" href="index.html">Simply Broccoli<span>Web Design and Usability II</span></a>
         </div>
@@ -35,35 +35,43 @@
         </ul>
     </nav>
     <!-- Contact -->
-    <section id="contact" class="container text-center p-5">
-        <h1 class="pb-4">Share Your Feedback</h1>
-        <form action="index.html" method="post" class="p-5">
-            <div class="form-group">
-                <input name="name" type="text" class="form-control" placeholder="Name">
-            </div>
-            <div class="form-group">
-                <input name="email" type="email" class="form-control" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <textarea name="message" class="form-control" rows="4" placeholder="Message"></textarea>
-            </div>
-            <button type="submit">not responsive</button>
-        </form>
+    <section class="contact-page">
+        <div class="contact-form-container">
+            <h1 class="text-center">Share Your Broccolini Story</h1>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input name="name" type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input name="email" type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" class="form-control" rows="5" placeholder="Share your thoughts about broccolini..." required></textarea>
+                </div>
+                <button type="submit" class="contact-submit-btn">Send Message</button>
+            </form>
+        </div>
     </section>
     <footer>
+        <div class="text-center my-4">
+            <a href="index.html" class="btn btn-lg btn-success">
+                <i class="fas fa-home me-2"></i>
+                Back to Home
+            </a>
+        </div>
         <div class="container text-center">
-            <p>&copy; 2025 Justin Hernandez. All rights reserved.</p>
             <ul class="social-icon">
-                <li><a href="#" class="fab fa-facebook-f"></a></li>
-                <li><a href="#" class="fab fa-twitter"></a></li>
-                <li><a href="#" class="fab fa-instagram"></a></li>
-                <li><a href="#" class="fab fa-linkedin-in"></a></li>
+                <li><a href="https://www.facebook.com/itsnotsetupyet" target="_blank" class="fab fa-facebook-f"></a></li>
+                <li><a href="https://twitter.com/itsnotsetupyet" target="_blank" class="fab fa-twitter"></a></li>
+                <li><a href="https://www.instagram.com/itsnotsetupyet" target="_blank" class="fab fa-instagram"></a></li>
+                <li><a href="https://www.linkedin.com/in/itsnotsetupyet" target="_blank" class="fab fa-linkedin-in"></a></li>
             </ul>
         </div>
+            <p class="text-center contactemail">Direct Email @ <a href="mailto:wingbroccolini@gmail.com" class="btn btn-outline-success">wingbroccolini@gmail.com</a></p>
         <div id="about">
             <h2>About me</h2>
             <p>
-                A student at NAIT
+                Wing Brook
                 <!-- svg -->
                 <svg width="800px" height="800px" version="1.1" viewBox="0 0 512 512" xml:space="preserve"
                     xmlns="http://www.w3.org/2000/svg">
@@ -84,17 +92,21 @@
                         fill="#90BC42" />
                 </svg>
             </p>
-            <p>Hello everyone, my name is Wing Broccolini and I am passionate about learning different ways of preparing and enjoying broccolini. I've experimented with all kinds of broccolis in so many ways, and honestly, it's one of the most versatile veggies you'll find. From grilling, steaming, to salting and even including it in a salad, it has become a household vegetable in my kitchen.</p>
-
+            <p>Hello everyone, my name is Wing Brook and I am passionate about learning different ways of preparing and enjoying broccolini. I've experimented with all kinds of broccolis in so many ways, and honestly, it's one of the most versatile veggies you'll find. From grilling, steaming, to salting and even including it in a salad, it has become a household vegetable in my kitchen.</p>
             <p>This is because what makes me most excited about broccolini is how easy it is to work with in almost every meal. It is healthy, tasty and can really enhance the flavor of any meal. On this site, I am going to be sharing some basic recipes that will help you include broccolini in your daily meals and eat healthy no matter what your cooking skills are. You can even pretend to be a giant eating trees!</p>
-            
-            <p>My website is called Simply Broccoli because I specialize in broccolini. It is just broccoli, sleeker-but with a hybrid twist from China: proof that even the humblest things have their unique story behind them. Wing Broccolini is actually an alias and a nickname I picked up on. It just made sense with how much I worship this vegetable. But yes, my name is Wing Brook.</p>
-
-            <p>I've spent a lot of time figuring out how to make healthy food actually taste good, so you can trust that every recipe is something I'd genuinely enjoy myself. If you are in search of a quick and easy dinner idea or want to come up with something special, these recipes will change the way you think about broccolini, turning it into something you'll actually crave..</p>
-            
+    
+            <p>My website is called Simply Broccoli because I specialize in broccolini. It is just broccoli, sleeker-but with a hybrid twist from China: proof that even the humblest things have their unique story behind them.</p>
+            <p>I've spent a lot of time figuring out how to make healthy food actually taste good, so you can trust that every recipe is something I'd genuinely enjoy myself. If you are in search of a quick and easy dinner idea or want to come up with something special, these recipes will change the way you think about broccolini, turning it into something you'll actually crave.</p>
+    
             <p>Are you in the mood for some exciting meals? You've come to the right place! I'm excited to introduce you to these recipes and I'm sure you'll learn to love broccolini as much as I do. Let's get cooking!</p>
-            
+    
         </div>
+        <div class="policies text-center my-5">
+            <a href="https://www.iubenda.com/privacy-policy/18965021" class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a><script>(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+            <a href="https://www.iubenda.com/privacy-policy/18965021/cookie-policy" class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe " title="Cookie Policy ">Cookie Policy</a><script>(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+            <a href="license.txt" class="license-link text-success mx-2" title="License">License</a>
+        </div>
+        <p class="text-center">&copy; 2025 Simply Broccoli. For educational purposes only. All broccoli designs are the intellectual property of their linked creators.</p>
     </footer>
 </body>
 </html>

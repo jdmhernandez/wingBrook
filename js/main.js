@@ -1,6 +1,14 @@
 function toggleRecipe(id) {
     const recipe = document.getElementById(id);
-    recipe.style.display = recipe.style.display === "block" ? "none" : "block";
+    const button = recipe.previousElementSibling; // Get the button element
+    
+    if (recipe.style.display === "block") {
+        recipe.style.display = "none";
+        button.textContent = "View Recipe";
+    } else {
+        recipe.style.display = "block";
+        button.textContent = "Hide Recipe";
+    }
 }
 
 // Close popup if clicking outside
@@ -22,3 +30,33 @@ function hidePopup() {
     document.getElementById("recipePopup").style.display = "none"; // Hide popup
     document.body.style.overflow = "auto"; // Restore scrolling
 }
+
+// Fix nav collapse functionality
+const nav = document.querySelector('.znav');
+const banner = document.querySelector('#home');
+
+window.addEventListener('scroll', () => {
+    if (banner) {
+        const bannerBottom = banner.offsetTop + banner.offsetHeight;
+        const scrollPosition = window.scrollY;
+        const isMobile = window.innerWidth <= 768;
+        
+        // Use different thresholds for mobile and desktop
+        const threshold = isMobile ? bannerBottom : bannerBottom * 0.6;
+        
+        if (scrollPosition > threshold) {
+            nav.classList.add('nav-collapsed');
+        } else {
+            nav.classList.remove('nav-collapsed');
+        }
+    }
+});
+
+// Make images clickable
+document.querySelectorAll('.recipe-card img').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', function() {
+        const recipeId = this.closest('.recipe-card').querySelector('.recipe-content').id;
+        toggleRecipe(recipeId);
+    });
+});
