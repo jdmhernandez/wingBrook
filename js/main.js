@@ -41,11 +41,11 @@ window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY;
         const isMobile = window.innerWidth <= 768;
         
-        // Use different thresholds for mobile and desktop
-        const threshold = isMobile ? bannerBottom : bannerBottom * 0.6;
-        
+        const threshold = isMobile ? 122 : bannerBottom * 0.6;
+
         if (scrollPosition > threshold) {
             nav.classList.add('nav-collapsed');
+            hidePopup(); // Hide popup when scrolling past threshold
         } else {
             nav.classList.remove('nav-collapsed');
         }

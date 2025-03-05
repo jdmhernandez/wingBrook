@@ -316,6 +316,10 @@ nav .contain {
   border-bottom: 1px solid #eee;
 }
 
+.email-2 {
+  width: 200px;
+}
+
 .dropcap {
   font-size: 3.5rem;
   font-weight: bold;
