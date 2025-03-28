@@ -60,3 +60,7 @@ document.querySelectorAll('.recipe-card img').forEach(img => {
         toggleRecipe(recipeId);
     });
 });
+
+$(document).ready(function() {
+    $('#privacyModal').modal('show');
+});
