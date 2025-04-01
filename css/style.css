@@ -1275,3 +1275,16 @@ img {
 .mt-4 {
   margin-top: 1.5rem;
 }
+
+.top-ad-banner-settings {
+  background-color: #f8f8f8;
+}
+
+.top-ad-banner {
+  display: flex;
+  justify-content: center;
+}
+
+.ad-banner-sm {
+  padding-top: 3rem;
+}
