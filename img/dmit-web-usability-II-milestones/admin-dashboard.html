@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Photography Club - Admin Dashboard</title>
+    <style>
+        :root {
+            --primary-color: #3a6ea5;
+            --secondary-color: #f0f0f0;
+            --accent-color: #ff6b35;
+            --text-color: #333;
+            --light-text: #666;
+            --success-color: #4CAF50;
+            --warning-color: #FF9800;
+            --error-color: #f44336;
+            --light-bg: #f9f9f9;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .sidebar-header {
+            padding: 0 20px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-menu {
+            list-style-type: none;
+        }
+        
+        .sidebar-menu-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .sidebar-menu-item:hover,
+        .sidebar-menu-item.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .sidebar-menu-item .icon {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 30px;
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .dashboard-title {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .dashboard-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .btn-warning {
+            background-color: var(--warning-color);
+            color: white;
+        }
+        
+        .btn-danger {
+            background-color: var(--error-color);
+            color: white;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+        
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .filter-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .filter-control {
+            position: relative;
+        }
+        
+        .filter-control select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            min-width: 150px;
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-box input {
+            padding: 8px 12px 8px 35px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 250px;
+        }
+        
+        .search-box .icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--light-text);
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+        
+        th {
+            background-color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .status-pending {
+            background-color: rgba(255, 152, 0, 0.2);
+            color: var(--warning-color);
+        }
+        
+        .status-reviewed {
+            background-color: rgba(58, 110, 165, 0.2);
+            color: var(--primary-color);
+        }
+        
+        .status-accepted {
+            background-color: rgba(76, 175, 80, 0.2);
+            color: var(--success-color);
+        }
+        
+        .status-expired {
+            background-color: rgba(244, 67, 54, 0.2);
+            color: var(--error-color);
+        }
+        
+        .actions {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .action-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .action-icon:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .tab.active {
+            border-bottom-color: var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .tab:hover:not(.active) {
+            background-color: var(--secondary-color);
+        }
+        
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .event-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .event-content {
+            padding: 15px;
+            background-color: white;
+        }
+        
+        .event-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .event-meta {
+            font-size: 14px;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+        
+        .event-meta span {
+            margin-right: 10px;
+        }
+        
+        .event-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        
+        .event-published {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--success-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .event-draft {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--warning-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .event-past {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--light-text);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 200px;
+            }
+            
+            .main-content {
+                margin-left: 200px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 15px 0;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+            
+            .event-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .filter-controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .search-box input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Focus Club</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item active">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </li>
+                <li class="sidebar-menu-item">
+                    <span class="icon">👥</span>
+                    <span>Membership</span>
+                </li>
+                <li class="sidebar-menu-item">
+                    <span class="icon">📅</span>
+                    <span>Events</span>
+                </li>
+                <li class="sidebar-menu-item">
+                    <span class="icon">📱</span>
+                    <span>Communications</span>
+                </li>
+                <li class="sidebar-menu-item">
+                    <span class="icon">⚙️</span>
+                    <span>Settings</span>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="dashboard-header">
+                <h1 class="dashboard-title">Membership Applications</h1>
+                <div class="dashboard-actions">
+                    <button class="btn btn-primary">Export Data</button>
+                </div>
+            </div>
+            
+            <!-- Applicants Overview -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Applicant Overview</h2>
+                    <div class="filter-controls">
+                        <div class="filter-control">
+                            <select id="status-filter">
+                                <option value="all">All Status</option>
+                                <option value="pending">Pending</option>
+                                <option value="reviewed">Reviewed</option>
+                                <option value="accepted">Accepted</option>
+                            </select>
+                        </div>
+                        <div class="filter-control">
+                            <select id="experience-filter">
+                                <option value="all">All Experience</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+                        <div class="search-box">
+                            <span class="icon">🔍</span>
+                            <input type="text" placeholder="Search by name or email">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Experience</th>
+                                <th>Application Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John Davis</td>
+                                <td>john.davis@example.com</td>
+                                <td>Beginner</td>
+                                <td>2023-10-15</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <div class="action-icon" title="View Details">👁️</div>
+                                        <div class="action-icon" title="Accept Application">✅</div>
+                                        <div class="action-icon" title="Reject Application">❌</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sarah Johnson</td>
+                                <td>sarah.j@example.com</td>
+                                <td>Intermediate</td>
+                                <td>2023-10-12</td>
+                                <td><span class="status-badge status-reviewed">Reviewed</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <div class="action-icon" title="View Details">👁️</div>
+                                        <div class="action-icon" title="Accept Application">✅</div>
+                                        <div class="action-icon" title="Reject Application">❌</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Michael Smith</td>
+                                <td>michael.smith@example.com</td>
+                                <td>Advanced</td>
+                                <td>2023-10-10</td>
+                                <td><span class="status-badge status-accepted">Accepted</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <div class="action-icon" title="View Details">👁️</div>
+                                        <div class="action-icon" title="Send Email">📧</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Emily Brown</td>
+                                <td>emily.b@example.com</td>
+                                <td>Beginner</td>
+                                <td>2023-10-08</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <div class="action-icon" title="View Details">👁️</div>
+                                        <div class="action-icon" title="Accept Application">✅</div>
+                                        <div class="action-icon" title="Reject Application">❌</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Event Management -->
+            <div class="dashboard-header">
+                <h1 class="dashboard-title">Event Management</h1>
+                <div class="dashboard-actions">
+                    <button class="btn btn-primary">Create New Event</button>
+                </div>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab active">All Events</div>
+                <div class="tab">Upcoming</div>
+                <div class="tab">Draft</div>
+                <div class="tab">Past</div>
+            </div>
+            
+            <div class="event-grid">
+                <!-- Upcoming Published Event -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://source.unsplash.com/random/300x200/?photography');">
+                        <div class="event-published">Published</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Monthly Meetup: Macro Photography</h3>
+                        <div class="event-meta">
+                            <span>📅 Oct 25, 2023</span>
+                            <span>⏰ 6:00 PM</span>
+                        </div>
+                        <div class="event-meta">
+                            <span>📍 Community Center</span>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn btn-primary">Edit</button>
+                            <button class="btn btn-danger">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Draft Event -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://source.unsplash.com/random/300x200/?workshop');">
+                        <div class="event-draft">Draft</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Portrait Photography Workshop</h3>
+                        <div class="event-meta">
+                            <span>📅 Nov 10, 2023</span>
+                            <span>⏰ 10:00 AM</span>
+                        </div>
+                        <div class="event-meta">
+                            <span>📍 Studio 42</span>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn btn-success">Publish</button>
+                            <button class="btn btn-primary">Edit</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Past Event -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://source.unsplash.com/random/300x200/?gallery');">
+                        <div class="event-past">Past</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Fall Gallery Exhibition</h3>
+                        <div class="event-meta">
+                            <span>📅 Sep 15, 2023</span>
+                            <span>⏰ 7:00 PM</span>
+                        </div>
+                        <div class="event-meta">
+                            <span>📍 Downtown Gallery</span>
+                            <span>👥 24 Attendees</span>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn btn-primary">View Details</button>
+                            <button class="btn btn-warning">Duplicate</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Upcoming Published Event -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://source.unsplash.com/random/300x200/?darkroom');">
+                        <div class="event-published">Published</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Darkroom Access Session</h3>
+                        <div class="event-meta">
+                            <span>📅 Nov 5, 2023</span>
+                            <span>⏰ 2:00 PM</span>
+                        </div>
+                        <div class="event-meta">
+                            <span>📍 Art Center</span>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn btn-primary">Edit</button>
+                            <button class="btn btn-danger">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Attendance Analytics -->
+            <div class="dashboard-header">
+                <h1 class="dashboard-title">Attendance Analytics</h1>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Event Attendance</h2>
+                </div>
+                
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Registered</th>
+                                <th>Attended</th>
+                                <th>Attendance Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monthly Meetup: Landscape</td>
+                                <td>2023-09-20</td>
+                                <td>Regular Meetup</td>
+                                <td>32</td>
+                                <td>28</td>
+                                <td>88%</td>
+                            </tr>
+                            <tr>
+                                <td>Fall Gallery Exhibition</td>
+                                <td>2023-09-15</td>
+                                <td>Gallery Night</td>
+                                <td>45</td>
+                                <td>42</td>
+                                <td>93%</td>
+                            </tr>
+                            <tr>
+                                <td>Street Photography Trip</td>
+                                <td>2023-08-25</td>
+                                <td>Photography Trip</td>
+                                <td>18</td>
+                                <td>15</td>
+                                <td>83%</td>
+                            </tr>
+                            <tr>
+                                <td>Monthly Meetup: Night Photography</td>
+                                <td>2023-08-20</td>
+                                <td>Regular Meetup</td>
+                                <td>30</td>
+                                <td>23</td>
+                                <td>77%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // This would contain the JavaScript for functionality
+        // As per your request, I'm focusing on the HTML/CSS structure only
+    </script>
+</body>
+</html> 

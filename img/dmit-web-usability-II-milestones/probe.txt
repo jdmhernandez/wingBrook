@@ -1,0 +1,122 @@
+DMIT 2033 Web Design & Usability ll
+Case Study - Focus Photography Club
+Background
+The Focus Photography Club started as a casual get-together of a few friends and
+acquaintances who shared an interest in photography as a hobby or a more serious
+endeavour. The monthly meetings quickly grew, and it wasn’t long before Rowan (one of
+the founders) decided to take more of an official lead and establish some structure to
+help manage the club.
+The first thing that Rowan did was to host the monthly meetings on meetup.com so they
+could start requiring registration and track participants. The club quickly realized that
+they gained a few new attendees every month, had participants who only attended
+semi-regularly, and had a group of participants who attended on a fairly regular basis.
+Along with the growth and popularity of the photography club, there have been requests
+and talk of adding events to go along with the regular meetings. Some ideas are
+workshops, speakers, photography trips, gallery shows, and access to a dark room for
+film development. Rowan has already tried some of these ideas, and they seem to be
+met with enthusiasm. However, word-of-mouth and meetup.com are the only ways
+these events are advertised, and some people have expressed disappointment that
+they missed out. Secondly, some of these events will require some type of financing to
+run.
+Although the monthly meetings started as casual get-togethers where everyone seemed
+to enjoy the company and break off into smaller groups for side conversations, lately,
+the meetings have taken on more of a formal format. Rowan or other members now
+start each meeting with a brief talk on various photography topics, focusing primarily on
+beginner subjects to engage everyone's interests. However, Rowan is beginning to
+wonder if some of the more advanced participants might be growing weary of the
+beginner-focused content.
+
+
+Problem 1: Membership Application
+Rowan sees the limitations of continuing with meetup.com for all the future needs of the
+club. Currently, they only know which participants attend each meeting but lack any
+details about them and have no way to reach out to individuals directly. Rowan and the
+club would like to move to a membership model. Each participant would have to apply
+to become a member of the club before they can join any meetups or events.
+Memberships will cost $40 per year to help fund some of the events. Members will only
+pay the fee once they have become approved.
+The Focus Photography Club would like you to design the UI of a digital
+platform to allow potential members to apply for membership in an easy-to-
+use way.
+The following information will be needed from potential members:
+• Name
+• DOB
+• Email & Phone Number
+• Experience Level, select one of:
+• beginner
+• intermediate
+• advanced
+• Equipment, select any of:
+• DSLR / SLR
+• Point and Shoot
+• Smartphone
+• Compact Fixed Lens
+• Areas of Interest (of indeterminate length)
+• Portfolio Submission (Upload up to 5 photos with descriptions)
+• Accepted file formats JPG, JPEG, PNG, BMP, HEIC, HEIF
+• Total file size cannot exceed 10MB
+• Reason for Joining (Max 250 word)
+• Agreement to club terms and code of conduct
+The photography club originally started as a group of friends roughly the same age, but
+with the added growth, Rowan knows that the current participant’s ages range greatly. It
+shouldn’t be assumed that any person applying will have any special technical
+knowledge.
+The digital application will also need to be user-friendly for all devices. Users should be
+guided through the process without any pain points or sources of frustration. It should
+be obvious what each component does and what each input is asking for. That all needs
+to be balanced with a simplified level of complexity to encourage users to complete the
+application.
+
+
+
+Problem 2: Review Applicants, Track Details, &
+Manage Events
+When the club was small, everyone knew each other and had each other’s email
+addresses. It was easy to contact everyone to let them know of a meeting change or
+any other announcement.
+While Rowan has some names and contact information from people who have
+registered via meetup.com, keeping track of details and individual participation has
+been almost impossible without any data centralization. Rowan has tried to gather some
+of this data in Excel spreadsheets, but it’s time-consuming, there are missing entries,
+and the information is overwhelming as separate pieces.
+The Focus Photography Club would like you to design the UI that allows for
+efficient review of applications, tracking of membership details, and management
+of events.
+Membership Applicants
+Rowan will need a simple way to review applications as they come in. Each applicant
+will have a status applied: pending, reviewed, or accepted. New applications will
+automatically be ‘pending,’ but Rowan will need to be able to edit the status to accept
+new members.
+Additionally, there should be a way to access all members, see an overview, and sort
+them by their level of experience, areas of interest, and membership status. There
+should also be a way to view the full details of each member and remove a member if
+expired.
+Event Management
+Instead of using meetup.com, Rowan would like to create the monthly meetings and
+other events here for approved members to sign up and register for. There should be an
+easy way to create new events and add all necessary details. Ideally, the events could
+be created and saved for review before publishing.
+Each event will have the following details to add:
+• Type of event
+• Regular meetups
+• Workshop
+• Speaker Night
+• Photography Trip
+• Gallery Night
+• Darkroom Access
+• New Event
+• Time and Date
+• Location
+• An image showing the event
+There should be a way to review all events and tell if they are past events, saved events
+waiting for review, and published upcoming events. There should also be a way to
+publish events after they are created.
+Furthermore, Rowan would love to have some way to track and see the attendance of
+past events. Highlighting the engagement would help the administrators identify
+interests and know what type of events to plan for in the future.
+
+Rowan hopes that once a user-friendly digital platform is in place, other founding
+members can assist in running and organizing the club. In that case, the design needs
+to be clear and functional for new administrators who will be working on various types of
+devices. Assume that users have no prior knowledge of how the platform is intended to
+work.

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Photography Club - Design Thinking Process</title>
+    <style>
+        :root {
+            --primary-color: #3a6ea5;
+            --secondary-color: #f0f0f0;
+            --accent-color: #ff6b35;
+            --text-color: #333;
+            --light-text: #666;
+            --success-color: #4CAF50;
+            --section-bg: #f9f9f9;
+            --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fff;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin: 30px 0 20px;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: var(--accent-color);
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .intro {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        
+        .section {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .section-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            color: var(--accent-color);
+        }
+        
+        .goal-box, .question-box, .hmw-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .goal-box h3, .question-box h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .hmw-list {
+            list-style-type: none;
+        }
+        
+        .hmw-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .journey-map {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .journey-stages {
+            display: flex;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        .journey-stage {
+            min-width: 200px;
+            padding: 15px;
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            margin-right: 15px;
+            flex: 1;
+        }
+        
+        .journey-stage:last-child {
+            margin-right: 0;
+        }
+        
+        .stage-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .emotion {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        
+        .pain-points {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--light-text);
+        }
+        
+        .notes {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .notes-list {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        
+        .notes-list li {
+            margin-bottom: 10px;
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .solution-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .solution-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .solution-img {
+            width: 100%;
+            height: 200px;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--light-text);
+        }
+        
+        .solution-desc {
+            font-size: 14px;
+        }
+        
+        .storyboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .storyboard-panel {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .panel-img {
+            width: 100%;
+            height: 150px;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--light-text);
+        }
+        
+        .panel-number {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 10px;
+        }
+        
+        .panel-caption {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .journey-stages {
+                flex-direction: column;
+            }
+            
+            .journey-stage {
+                margin-right: 0;
+                margin-bottom: 15px;
+                min-width: auto;
+            }
+            
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .storyboard {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .storyboard-panel {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Focus Photography Club</h1>
+            <p class="intro">Design Thinking Process for Membership Application (Problem #1)</p>
+        </header>
+        
+        <!-- Long-term Goals, Sprint Questions & HMWs -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">🎯</span>
+                <h2>Long-term Goal, Sprint Questions & HMWs</h2>
+            </div>
+            
+            <div class="goal-box">
+                <h3>Long-term Goal</h3>
+                <p>Create an intuitive membership application system that helps Focus Photography Club sustainably grow while collecting meaningful member data and generating revenue.</p>
+            </div>
+            
+            <h3>Sprint Questions</h3>
+            <div class="question-box">
+                <p>How might we balance collecting comprehensive member information without overwhelming applicants?</p>
+            </div>
+            <div class="question-box">
+                <p>How might we design a membership process that accommodates users with varying technical abilities?</p>
+            </div>
+            <div class="question-box">
+                <p>How might we create a platform that scales with the club's growing needs?</p>
+            </div>
+            <div class="question-box">
+                <p>How might we ensure the portfolio submission process is straightforward?</p>
+            </div>
+            
+            <h3>How Might We (HMWs)</h3>
+            <ul class="hmw-list">
+                <li class="hmw-item">HMW make the experience feel approachable for beginners while still appealing to advanced photographers?</li>
+                <li class="hmw-item">HMW design a mobile-friendly form that handles image uploads intuitively?</li>
+                <li class="hmw-item">HMW communicate membership benefits during the application process?</li>
+                <li class="hmw-item">HMW clearly explain the approval process to applicants?</li>
+                <li class="hmw-item">HMW design an intuitive portfolio upload that enforces file type and size restrictions?</li>
+            </ul>
+        </div>
+        
+        <!-- Journey Map -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">🗺️</span>
+                <h2>Journey Map</h2>
+            </div>
+            
+            <p>A journey map of the current user experience through this problem:</p>
+            
+            <div class="journey-map">
+                <div class="journey-stages">
+                    <div class="journey-stage">
+                        <div class="stage-title">1. Awareness</div>
+                        <div class="emotion">😊</div>
+                        <p>Person hears about club through word-of-mouth or Meetup</p>
+                        <div class="pain-points">
+                            <strong>Pain points:</strong> Limited information available about the club
+                        </div>
+                    </div>
+                    
+                    <div class="journey-stage">
+                        <div class="stage-title">2. Interest</div>
+                        <div class="emotion">🙂</div>
+                        <p>Attends first meeting as a casual participant</p>
+                        <div class="pain-points">
+                            <strong>Pain points:</strong> No formal introduction process
+                        </div>
+                    </div>
+                    
+                    <div class="journey-stage">
+                        <div class="stage-title">3. Participation</div>
+                        <div class="emotion">😐</div>
+                        <p>Joins occasional meetings through Meetup</p>
+                        <div class="pain-points">
+                            <strong>Pain points:</strong> Limited engagement; no way to connect with other members
+                        </div>
+                    </div>
+                    
+                    <div class="journey-stage">
+                        <div class="stage-title">4. Limited Engagement</div>
+                        <div class="emotion">😕</div>
+                        <p>Misses events due to communication gaps</p>
+                        <div class="pain-points">
+                            <strong>Pain points:</strong> No direct communication channel; reliance on Meetup
+                        </div>
+                    </div>
+                    
+                    <div class="journey-stage">
+                        <div class="stage-title">5. Frustration</div>
+                        <div class="emotion">😞</div>
+                        <p>No way to learn about special events or connect with other members</p>
+                        <div class="pain-points">
+                            <strong>Pain points:</strong> Feels disconnected from the community
+                        </div>
+                    </div>
+                    
+                    <div class="journey-stage">
+                        <div class="stage-title">6. Barrier</div>
+                        <div class="emotion">😠</div>
+                        <p>No formal way to join or contribute financially</p>
+                        <div class="pain-points">
+                            <strong>Pain points:</strong> Unable to participate in member-only events
+                        </div>
+                    </div>
+                    
+                    <div class="journey-stage">
+                        <div class="stage-title">7. Dropout</div>
+                        <div class="emotion">😢</div>
+                        <p>Possibly loses interest due to beginner-focused content (advanced users)</p>
+                        <div class="pain-points">
+                            <strong>Pain points:</strong> Content doesn't match their skill level
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Handwritten Notes -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">📝</span>
+                <h2>Handwritten Notes</h2>
+            </div>
+            
+            <div class="notes">
+                <h3>Key Observations</h3>
+                <ul class="notes-list">
+                    <li>Club's transition from casual meetup to structured organization requires formalized membership system</li>
+                    <li>Current limitations of Meetup.com platform: no direct contact, limited member information, no payment system</li>
+                    <li>Diverse user group with varying technical abilities (all ages, experience levels)</li>
+                    <li>Need for financial sustainability through $40 annual membership fees</li>
+                    <li>Challenge: Balance comprehensive data collection with simplicity to prevent form abandonment</li>
+                    <li>Mobile responsiveness critical for accessibility</li>
+                    <li>Portfolio submission must handle various file types while enforcing size limits (10MB)</li>
+                    <li>Data needs: demographic info, skill levels, equipment types, portfolio samples, interests</li>
+                    <li>Must communicate clear value proposition to justify membership fee</li>
+                    <li>Need clear path for application review and approval process</li>
+                </ul>
+            </div>
+            
+            <div class="notes">
+                <h3>User Needs</h3>
+                <ul class="notes-list">
+                    <li>Simple, intuitive application process</li>
+                    <li>Clear explanation of membership benefits</li>
+                    <li>Ability to showcase photography skills/interests</li>
+                    <li>Transparency about approval process</li>
+                    <li>Mobile-friendly interface</li>
+                    <li>Accessibility for users of all technical abilities</li>
+                    <li>Simple file upload process</li>
+                </ul>
+            </div>
+            
+            <div class="notes">
+                <h3>Club Needs</h3>
+                <ul class="notes-list">
+                    <li>Comprehensive member information collection</li>
+                    <li>Ability to segment members by experience level</li>
+                    <li>Portfolio samples to assess skill level</li>
+                    <li>Understanding of members' interests for event planning</li>
+                    <li>Sustainable revenue through membership fees</li>
+                    <li>Agreement to club terms and code of conduct</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Possible Solutions -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">💡</span>
+                <h2>Possible Solutions</h2>
+            </div>
+            
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <h3 class="solution-title">Solution 1: Wizard-Style Application</h3>
+                    <div class="solution-img">📋</div>
+                    <p class="solution-desc">A multi-step linear flow breaking the application into logical sections with a progress indicator showing completion status. Each screen focuses on one component of the application, making it less overwhelming and more mobile-friendly.</p>
+                    <p class="solution-desc"><strong>Pros:</strong> Clean, focused interface; reduces cognitive load; mobile-friendly; clear progress tracking</p>
+                    <p class="solution-desc"><strong>Cons:</strong> Multiple steps might lead to higher abandonment rates; harder to review entire application at once</p>
+                </div>
+                
+                <div class="solution-card">
+                    <h3 class="solution-title">Solution 2: Single-Page Application</h3>
+                    <div class="solution-img">📄</div>
+                    <p class="solution-desc">All form fields visible on one scrollable page with collapsible sections for organization. A floating "Apply" button remains visible while scrolling, and the portfolio uploader uses drag-and-drop functionality.</p>
+                    <p class="solution-desc"><strong>Pros:</strong> Users can see all requirements at once; easier to navigate back and forth; single submission</p>
+                    <p class="solution-desc"><strong>Cons:</strong> May appear overwhelming; longer scroll on mobile; form might feel daunting</p>
+                </div>
+                
+                <div class="solution-card">
+                    <h3 class="solution-title">Solution 3: Conversational Interface</h3>
+                    <div class="solution-img">💬</div>
+                    <p class="solution-desc">A chatbot-style interface that asks questions sequentially in a conversational tone. Includes built-in help and examples for each question and an interactive portfolio upload with thumbnail previews.</p>
+                    <p class="solution-desc"><strong>Pros:</strong> Friendly, approachable feel; mirrors club's casual origins; can provide contextual help</p>
+                    <p class="solution-desc"><strong>Cons:</strong> Less efficient for advanced users; may feel gimmicky; harder to implement complex functionality</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Storyboard -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">🎬</span>
+                <h2>Storyboard of Best Solution</h2>
+            </div>
+            
+            <p>Based on our evaluation, the Wizard-Style Application provides the best balance of simplicity, guidance, and comprehensive data collection. Here's a simplified storyboard illustrating the key steps in the user flow:</p>
+            
+            <div class="storyboard">
+                <div class="storyboard-panel" style="max-width: 450px; min-width: 300px;">
+                    <div class="panel-img">1</div>
+                    <div><span class="panel-number">1</span> User discovers and explores membership benefits</div>
+                    <p class="panel-caption">User finds the club website, clicks on "Join Us", and reviews membership benefits and the $40 annual fee on a dedicated landing page.</p>
+                </div>
+                
+                <div class="storyboard-panel" style="max-width: 450px; min-width: 300px;">
+                    <div class="panel-img">2</div>
+                    <div><span class="panel-number">2</span> Personal information entry</div>
+                    <p class="panel-caption">User enters basic personal information (name, DOB, contact details) in a simple form with clear validation feedback.</p>
+                </div>
+                
+                <div class="storyboard-panel" style="max-width: 450px; min-width: 300px;">
+                    <div class="panel-img">3</div>
+                    <div><span class="panel-number">3</span> Photography experience and equipment</div>
+                    <p class="panel-caption">User selects experience level (beginner, intermediate, advanced) and equipment used through visual selector cards and checkboxes.</p>
+                </div>
+                
+                <div class="storyboard-panel" style="max-width: 450px; min-width: 300px;">
+                    <div class="panel-img">4</div>
+                    <div><span class="panel-number">4</span> Portfolio and interests</div>
+                    <p class="panel-caption">User uploads portfolio photos (up to 5) with an intuitive drag-drop interface and enters photography interests using a tag-based system.</p>
+                </div>
+                
+                <div class="storyboard-panel" style="max-width: 450px; min-width: 300px;">
+                    <div class="panel-img">5</div>
+                    <div><span class="panel-number">5</span> Reason for joining and terms agreement</div>
+                    <p class="panel-caption">User enters reason for joining (with word counter) and agrees to club terms and code of conduct with clear links to full documents.</p>
+                </div>
+                
+                <div class="storyboard-panel" style="max-width: 450px; min-width: 300px;">
+                    <div class="panel-img">6</div>
+                    <div><span class="panel-number">6</span> Review, submit, and next steps</div>
+                    <p class="panel-caption">User reviews all information, submits application, receives confirmation with next steps explanation and timeline for approval.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

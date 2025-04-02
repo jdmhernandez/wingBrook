@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Photography Club - User Journey Map Chart</title>
+    <style>
+        :root {
+            --primary-color: #3a6ea5;
+            --secondary-color: #f0f0f0;
+            --accent-color: #ff6b35;
+            --text-color: #333;
+            --light-text: #666;
+            --success-color: #4CAF50;
+            --warning-color: #FF9800;
+            --error-color: #f44336;
+            --neutral-color: #607D8B;
+            --arrow-color: #ccc;
+            --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fff;
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+        
+        .journey-map {
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+        
+        .flow-chart {
+            min-width: 900px;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .step-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .chart-step {
+            width: 200px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            line-height: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .step-emotion {
+            font-size: 28px;
+            margin: 10px 0;
+        }
+        
+        .step-description {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .step-pain {
+            font-size: 12px;
+            color: var(--error-color);
+            font-style: italic;
+            padding-top: 10px;
+            border-top: 1px dashed #eee;
+        }
+        
+        /* Arrows */
+        .arrow-right {
+            position: absolute;
+            top: 30px;
+            width: calc(100% - 220px);
+            left: 210px;
+            height: 2px;
+            background-color: var(--arrow-color);
+            z-index: 1;
+        }
+        
+        .arrow-right::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -6px;
+            width: 0;
+            height: 0;
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+            border-left: 14px solid var(--arrow-color);
+        }
+        
+        .arrow-down {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            width: 2px;
+            height: 40px;
+            background-color: var(--arrow-color);
+            z-index: 1;
+        }
+        
+        .arrow-down::after {
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            left: -6px;
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 14px solid var(--arrow-color);
+        }
+        
+        .journey-legend {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+        
+        .legend-positive {
+            background-color: var(--success-color);
+        }
+        
+        .legend-neutral {
+            background-color: var(--neutral-color);
+        }
+        
+        .legend-negative {
+            background-color: var(--error-color);
+        }
+        
+        .legend-action {
+            background-color: var(--primary-color);
+        }
+        
+        .legend-goal {
+            background-color: var(--accent-color);
+        }
+        
+        .journey-notes {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+        }
+        
+        .notes-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .step-goal {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .opportunity {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: rgba(76, 175, 80, 0.1);
+            border-left: 3px solid var(--success-color);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .opportunity-header {
+            font-weight: bold;
+            color: var(--success-color);
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .journey-legend {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .legend-item {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Focus Photography Club - User Journey Map</h1>
+            <p class="subtitle">Current Experience Flow Chart</p>
+        </header>
+        
+        <div class="journey-map">
+            <div class="flow-chart">
+                <!-- Row 1: Initial Awareness to Participation -->
+                <div class="step-row">
+                    <div class="chart-step">
+                        <span class="step-number">1</span>
+                        <h3 class="step-title">Discovery</h3>
+                        <div class="step-emotion">😊</div>
+                        <p class="step-description">User hears about the Photography Club through word-of-mouth or sees it on Meetup.com</p>
+                        <p class="step-pain">Limited information about club structure and focus areas</p>
+                    </div>
+                    
+                    <div class="arrow-right"></div>
+                    
+                    <div class="chart-step">
+                        <span class="step-number">2</span>
+                        <h3 class="step-title">Interest</h3>
+                        <div class="step-emotion">🤔</div>
+                        <p class="step-description">Browses Meetup page to learn more about upcoming meetings</p>
+                        <p class="step-pain">Can't see details about member demographics or past events</p>
+                    </div>
+                    
+                    <div class="arrow-right"></div>
+                    
+                    <div class="chart-step">
+                        <span class="step-number">3</span>
+                        <h3 class="step-title">First Meeting</h3>
+                        <div class="step-emotion">🙂</div>
+                        <p class="step-description">Attends a meeting as casual participant without formal introduction</p>
+                        <p class="step-pain">No structured way to introduce themselves or connect with others</p>
+                    </div>
+                </div>
+                
+                <!-- Arrow down to next row -->
+                <div class="chart-step" style="position: absolute; left: 50%; transform: translateX(-50%); margin-top: -40px;">
+                    <div class="arrow-down"></div>
+                </div>
+                
+                <!-- Row 2: Engagement and Continued Participation -->
+                <div class="step-row">
+                    <div class="chart-step">
+                        <span class="step-number">4</span>
+                        <h3 class="step-title">Regular Attendance</h3>
+                        <div class="step-emotion">😊</div>
+                        <p class="step-description">User attends monthly meetings regularly via Meetup.com</p>
+                        <p class="step-pain">Limited to events posted on Meetup platform</p>
+                    </div>
+                    
+                    <div class="arrow-right"></div>
+                    
+                    <div class="chart-step">
+                        <span class="step-number">5</span>
+                        <h3 class="step-title">Skill Sharing</h3>
+                        <div class="step-emotion">😄</div>
+                        <p class="step-description">Begins to share photography knowledge during meetings</p>
+                        <p class="step-pain">Limited opportunity for structured teaching or learning</p>
+                    </div>
+                    
+                    <div class="arrow-right"></div>
+                    
+                    <div class="chart-step">
+                        <span class="step-number">6</span>
+                        <h3 class="step-title">Network Building</h3>
+                        <div class="step-emotion">🙂</div>
+                        <p class="step-description">Exchanges contact info with other regular attendees</p>
+                        <p class="step-pain">Personal networking rather than club-facilitated connections</p>
+                    </div>
+                </div>
+                
+                <!-- Arrow down to next row -->
+                <div class="chart-step" style="position: absolute; left: 50%; transform: translateX(-50%); margin-top: -40px;">
+                    <div class="arrow-down"></div>
+                </div>
+                
+                <!-- Row 3: Deeper Engagement -->
+                <div class="step-row">
+                    <div class="chart-step">
+                        <span class="step-number">7</span>
+                        <h3 class="step-title">Volunteer Assistance</h3>
+                        <div class="step-emotion">😀</div>
+                        <p class="step-description">Offers to help organizers with meeting logistics</p>
+                        <p class="step-pain">No formal volunteer structure or recognition system</p>
+                    </div>
+                    
+                    <div class="arrow-right"></div>
+                    
+                    <div class="chart-step">
+                        <span class="step-number">8</span>
+                        <h3 class="step-title">Photo Sharing</h3>
+                        <div class="step-emotion">😎</div>
+                        <p class="step-description">Brings photos to meetings to share and get feedback</p>
+                        <p class="step-pain">Limited opportunities for formal critique or exhibition</p>
+                    </div>
+                    
+                    <div class="arrow-right"></div>
+                    
+                    <div class="chart-step">
+                        <span class="step-number">9</span>
+                        <h3 class="step-title">Special Event Participation</h3>
+                        <div class="step-emotion">🤩</div>
+                        <p class="step-description">Gets invited to participate in occasional workshops/trips</p>
+                        <p class="step-pain">Events are infrequent and information spreads informally</p>
+                    </div>
+                </div>
+                
+                <!-- Arrow down to goal -->
+                <div class="chart-step" style="position: absolute; left: 50%; transform: translateX(-50%); margin-top: -40px;">
+                    <div class="arrow-down"></div>
+                </div>
+                
+                <!-- Final Goal -->
+                <div class="step-row">
+                    <div class="chart-step step-goal" style="width: 400px; margin: 0 auto;">
+                        <span class="step-number">10</span>
+                        <h3 class="step-title">Long-term Goal (Current vs. Future)</h3>
+                        <div class="step-emotion">🌟</div>
+                        <p class="step-description">Current: Informal core member with no official recognition or benefits</p>
+                        <p class="step-description" style="margin-top: 10px; font-weight: bold;">Future: Create an intuitive membership application system for sustainable growth, data collection, and revenue generation</p>
+                        <div class="opportunity">
+                            <p class="opportunity-header">Gap Analysis:</p>
+                            <p>The current journey lacks formalized steps to officially become a member, misses opportunities to collect valuable data on participants, and provides no mechanism for generating club revenue needed for growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="journey-legend">
+            <div class="legend-item">
+                <div class="legend-color legend-positive"></div>
+                <span>Positive Experience</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-neutral"></div>
+                <span>Neutral Experience</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-negative"></div>
+                <span>Pain Point/Frustration</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-action"></div>
+                <span>User Action</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-goal"></div>
+                <span>Desired Goal</span>
+            </div>
+        </div>
+        
+        <div class="journey-notes">
+            <h3 class="notes-title">Key Journey Map Insights:</h3>
+            <ol>
+                <li><strong>Informal Progression:</strong> The current best-case user journey relies heavily on individual initiative and personal networking rather than structured pathways.</li>
+                <li><strong>Limited Recognition:</strong> Even highly engaged participants lack formal recognition as members.</li>
+                <li><strong>Communication Challenges:</strong> Reliance on Meetup.com and word-of-mouth limits effective communication about events and opportunities.</li>
+                <li><strong>Ad Hoc Engagement:</strong> Participation in special events happens through informal channels rather than a structured system.</li>
+                <li><strong>Knowledge Sharing Constraints:</strong> Limited mechanisms for structured skill sharing and learning despite interest from participants.</li>
+                <li><strong>Resource Limitations:</strong> Without membership fees, the club has limited resources for expanding offerings and improving experiences.</li>
+                <li><strong>Undefined Advancement:</strong> No clear path for advancement from casual attendee to club leadership or specialized roles.</li>
+                <li><strong>Missed Data Collection:</strong> Current journey fails to capture valuable information about members' interests, skill levels, and equipment that could inform better programming.</li>
+                <li><strong>No Revenue Stream:</strong> Without a formalized membership system, the club lacks a sustainable funding model for growth and enhancement.</li>
+            </ol>
+            
+            <h3 class="notes-title" style="margin-top: 20px;">How The Membership Application Will Help:</h3>
+            <ol>
+                <li>Formalize the progression from casual attendee to recognized member</li>
+                <li>Create structured communication channels for all club activities</li>
+                <li>Establish clear benefits for membership to encourage deeper engagement</li>
+                <li>Enable resource generation through membership fees to fund club activities and growth</li>
+                <li>Collect meaningful data about members' skills, interests, and equipment</li>
+                <li>Use member data to guide event planning and content development</li>
+                <li>Facilitate connections between members with similar photography interests</li>
+                <li>Generate sustainable revenue through standardized $40 annual membership fees</li>
+                <li>Provide metrics for tracking club growth and member engagement</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html> 

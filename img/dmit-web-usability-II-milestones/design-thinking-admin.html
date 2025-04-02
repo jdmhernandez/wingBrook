@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Photography Club - Admin Dashboard Design Thinking</title>
+    <style>
+        :root {
+            --primary-color: #3a6ea5;
+            --secondary-color: #f0f0f0;
+            --accent-color: #ff6b35;
+            --text-color: #333;
+            --light-text: #666;
+            --success-color: #4CAF50;
+            --section-bg: #f9f9f9;
+            --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fff;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin: 30px 0 20px;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: var(--accent-color);
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .intro {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        
+        .section {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .section-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            color: var(--accent-color);
+        }
+        
+        .goal-box, .question-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .hmw-list {
+            list-style-type: none;
+        }
+        
+        .hmw-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .journey-map {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .journey-stages {
+            display: flex;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        
+        .journey-stage {
+            min-width: 250px;
+            padding: 15px;
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .stage-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .emotion {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        
+        .pain-points {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--light-text);
+        }
+        
+        .notes {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .notes-list {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        
+        .notes-list li {
+            margin-bottom: 10px;
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .solution-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .solution-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .solution-img {
+            width: 100%;
+            height: 200px;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--light-text);
+        }
+        
+        .solution-desc {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .storyboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .storyboard-panel {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .panel-img {
+            width: 100%;
+            height: 180px;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--light-text);
+        }
+        
+        .panel-number {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 10px;
+        }
+        
+        .panel-caption {
+            font-size: 14px;
+            margin-top: 10px;
+            color: var(--light-text);
+        }
+        
+        @media (max-width: 768px) {
+            .journey-stages {
+                flex-direction: column;
+            }
+            
+            .journey-stage {
+                min-width: auto;
+            }
+            
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .storyboard {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Focus Photography Club</h1>
+            <p class="intro">Design Thinking Process for Admin Dashboard (Problem #2)</p>
+        </header>
+        
+        <!-- Long-term Goals, Sprint Questions & HMWs -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">🎯</span>
+                <h2>Long-term Goal, Sprint Questions & HMWs</h2>
+            </div>
+            
+            <div class="goal-box">
+                <h3>Long-term Goal</h3>
+                <p>Create a user-friendly admin dashboard to manage members, events, and data in one place.</p>
+            </div>
+            
+            <h3>Sprint Questions</h3>
+            <div class="question-box">
+                <p>1. How to make it easy for multiple admins to use?</p>
+            </div>
+            <div class="question-box">
+                <p>2. How to show data in a way that helps make decisions?</p>
+            </div>
+            <div class="question-box">
+                <p>3. How to make it work well on all devices?</p>
+            </div>
+            
+            <h3>How Might We (HMWs)</h3>
+            <ul class="hmw-list">
+                <li class="hmw-item">HMW make application reviews quick and easy?</li>
+                <li class="hmw-item">HMW make event management simple?</li>
+                <li class="hmw-item">HMW track member engagement effectively?</li>
+            </ul>
+        </div>
+        
+        <!-- Journey Map -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">🗺️</span>
+                <h2>Journey Map</h2>
+            </div>
+            
+            <p>Current admin experience:</p>
+            
+            <div class="journey-map">
+                <div class="journey-stages">
+                    <div class="journey-stage">
+                        <div class="stage-title">1. Review Applications</div>
+                        <div class="emotion">😓</div>
+                        <p>Check emails & Meetup</p>
+                        <div class="pain-points">
+                            <strong>Pain:</strong> Scattered info
+                        </div>
+                    </div>
+                    
+                    <div class="journey-stage">
+                        <div class="stage-title">2. Track Members</div>
+                        <div class="emotion">😣</div>
+                        <p>Update Excel sheets</p>
+                        <div class="pain-points">
+                            <strong>Pain:</strong> Manual work
+                        </div>
+                    </div>
+                    
+                    <div class="journey-stage">
+                        <div class="stage-title">3. Plan Events</div>
+                        <div class="emotion">😤</div>
+                        <p>Use limited Meetup tools</p>
+                        <div class="pain-points">
+                            <strong>Pain:</strong> Basic features only
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Handwritten Notes -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">📝</span>
+                <h2>Notes</h2>
+            </div>
+            
+            <div class="notes">
+                <h3>Problems</h3>
+                <ul class="notes-list">
+                    <li>No central system</li>
+                    <li>Manual Excel tracking</li>
+                    <li>Can't analyze data well</li>
+                    <li>Hard to coordinate</li>
+                </ul>
+            </div>
+            
+            <div class="notes">
+                <h3>Needs</h3>
+                <ul class="notes-list">
+                    <li>Quick member access</li>
+                    <li>Easy event tools</li>
+                    <li>Good data views</li>
+                    <li>Mobile friendly</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Possible Solutions -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">💡</span>
+                <h2>Solutions</h2>
+            </div>
+            
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <h3 class="solution-title">1. Dashboard View</h3>
+                    <div class="solution-img">📊</div>
+                    <p class="solution-desc">All-in-one dashboard with quick actions</p>
+                    <p class="solution-desc"><strong>+</strong> Everything at a glance</p>
+                    <p class="solution-desc"><strong>-</strong> Could be overwhelming</p>
+                </div>
+                
+                <div class="solution-card">
+                    <h3 class="solution-title">2. Module System</h3>
+                    <div class="solution-img">🧩</div>
+                    <p class="solution-desc">Separate sections for each task</p>
+                    <p class="solution-desc"><strong>+</strong> Clean and focused</p>
+                    <p class="solution-desc"><strong>-</strong> More clicks needed</p>
+                </div>
+                
+                <div class="solution-card">
+                    <h3 class="solution-title">3. Timeline View</h3>
+                    <div class="solution-img">📅</div>
+                    <p class="solution-desc">Calendar-based organization</p>
+                    <p class="solution-desc"><strong>+</strong> Good for planning</p>
+                    <p class="solution-desc"><strong>-</strong> Limited for some tasks</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Storyboard -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">🎬</span>
+                <h2>Storyboard (Dashboard Solution)</h2>
+            </div>
+            
+            <div class="storyboard">
+                <div class="storyboard-panel">
+                    <div class="panel-img">1</div>
+                    <div><span class="panel-number">1</span> Login View</div>
+                    <p class="panel-caption">See key stats & tasks</p>
+                </div>
+                
+                <div class="storyboard-panel">
+                    <div class="panel-img">2</div>
+                    <div><span class="panel-number">2</span> Review Apps</div>
+                    <p class="panel-caption">Quick approve/reject</p>
+                </div>
+                
+                <div class="storyboard-panel">
+                    <div class="panel-img">3</div>
+                    <div><span class="panel-number">3</span> Member List</div>
+                    <p class="panel-caption">Filter & sort members</p>
+                </div>
+                
+                <div class="storyboard-panel">
+                    <div class="panel-img">4</div>
+                    <div><span class="panel-number">4</span> Add Event</div>
+                    <p class="panel-caption">Create or save draft</p>
+                </div>
+                
+                <div class="storyboard-panel">
+                    <div class="panel-img">5</div>
+                    <div><span class="panel-number">5</span> Event List</div>
+                    <p class="panel-caption">Calendar view & edit</p>
+                </div>
+                
+                <div class="storyboard-panel">
+                    <div class="panel-img">6</div>
+                    <div><span class="panel-number">6</span> Stats View</div>
+                    <p class="panel-caption">See trends & reports</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
