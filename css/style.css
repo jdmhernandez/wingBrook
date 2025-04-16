@@ -1288,3 +1288,57 @@ img {
 .ad-banner-sm {
   padding-top: 3rem;
 }
+
+/* Advertisement and Reciprocal Links Styles */
+.other-blogs {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.other-blogs .card-title {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.other-blogs hr {
+    border-color: #dee2e6;
+    margin: 15px 0;
+}
+
+.other-blogs a {
+    transition: color 0.3s ease;
+}
+
+.other-blogs a:hover {
+    color: #218838 !important;
+}
+
+.other-blogs svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.top-ad-banner {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 728px;
+}
+
+.ad-banner-sm {
+    max-width: 300px;
+}
+
+.top-ad-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.top-ad-banner img:hover {
+    transform: scale(1.02);
+}

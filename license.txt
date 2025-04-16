@@ -24,6 +24,30 @@ broccolini-simple.webp
   Free for use under the Pixabay Content License
   No attribution required
 
+broccolini-avocado.jpg
+  Downloaded from: https://www.pexels.com/photo/delicious-brunch-with-poached-egg-and-avocado-29898425/
+  Pexels - Free for commercial use
+  No attribution required
+
+broccolini-meatbread.jpg
+  Downloaded from: https://www.pexels.com/photo/hot-appetizer-of-meat-bread-and-caviar-with-sauce-10520417/
+  Pexels - Free for commercial use
+  No attribution required
+
+broccolini-with-meat.jpg
+  Downloaded from: https://www.pexels.com/photo/dish-with-meat-and-broccoli-10815851/
+  Pexels - Free for commercial use
+  No attribution required
+
+purple-broccolini.jpg
+  Downloaded from: https://media.canva.com/v2/files/uri:ifs%3A%2F%2FM%2F62d9d232-3396-4394-9045-4a95afeb7d3c?csig=AAAAAAAAAAAAAAAAAAAAAAcm1PvkN4lOMu_acJ5fx28v5uJsvacI-TZ4yzlasSS9&exp=1744788353&signer=media-rpc&token=AAIAAU0AJDYyZDlkMjMyLTMzOTYtNDM5NC05MDQ1LTRhOTVhZmViN2QzYwAAAAABlj19b-jOjmz9pawvzcNNhQ3fmUq3wujV4ySRUOCNRW586ERD-w
+  Generated image: Created using AI image generation technology
+  Created on: April 15, 2025
+  Purpose: Educational illustration of purple broccolini varieties
+  License: Original content created for Simply Broccoli website
+  Rights: Free for use on Simply Broccoli website only
+  Not for redistribution or use on other platforms
+
 wok-dish-broccoli.webp
   Downloaded from: https://www.pickpik.com/wok-dish-asia-rice-eat-chinese-fry-up-145459
   Source: Pickpik
@@ -38,3 +62,4 @@ chili-pepper-icon-svg
   Downloaded from: https://www.svgrepo.com/svg/45673/chili-pepper
   Source: svgrepo
   CC0 1.0 Universal PD Dedication | Free for personal and commercial use, no attribution required
+
